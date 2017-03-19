@@ -1,0 +1,7 @@
+set -e
+
+curl https://raw.githubusercontent.com/philipcristiano/AWSMF-Data/master/awsfm-data > /usr/bin/awsmf-data
+chmod +x /usr/bin/awsmf-data
+
+curl https://raw.githubusercontent.com/philipcristiano/AWSMF-Data/master/smf.xml > /lib/svc/manifest/system/awsmf-data.xml
+svcadm restart manifest-import
