@@ -1,4 +1,4 @@
 set -e
 set -o pipefail
 
-curl --fail http://169.254.169.254/2016-09-02/user-data | sh
+curl --fail http://169.254.169.254/2016-09-02/user-data | /usr/bin/bash
