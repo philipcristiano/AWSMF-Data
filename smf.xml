@@ -4,10 +4,10 @@
         Created by Manifold
 --><service_bundle type="manifest" name="awsmf-data">
 
-    <service name="/system/cloud/awsmf-data" type="service" version="1">
+    <service name="system/cloud/awsmf-data" type="service" version="1">
 
         <create_default_instance enabled="true"/>
-        
+
         <single_instance/>
 
         <dependency name="network" grouping="require_all" restart_on="error" type="service">
@@ -19,12 +19,12 @@
         </dependency>
 
 
-        
-        
-        
-        
+
+
+
+
         <method_context>
-            
+
         </method_context>
 
         <exec_method type="method" name="start" exec="/usr/bin/awsmf-data" timeout_seconds="60"/>
@@ -32,17 +32,17 @@
         <exec_method type="method" name="stop" exec=":kill" timeout_seconds="60"/>
 
         <property_group name="startd" type="framework">
-            
+
             <propval name="duration" type="astring" value="transient"/>
-            
+
             <propval name="ignore_error" type="astring" value="core,signal"/>
         </property_group>
 
         <property_group name="application" type="application">
-            
+
         </property_group>
-        
-        
+
+
         <stability value="Evolving"/>
 
         <template>
